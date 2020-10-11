@@ -36,7 +36,7 @@ export const NavLogo = styled(LinkR)
   font-size: 1.5rem;
   display: flex;
   align-items: center;
-  margin-left: 24px;
+  margin-left: 100px;
   font-weight: bold;
   text-decoration: none;
 `;
@@ -68,13 +68,14 @@ export const NavMenu = styled.ul `
 `;
 
 export const NavItem = styled.li `
-  height: 8px;
+  height: 80px;
 `;
 
 export const NavLinks = styled(LinkS)
 `
   color: #fff;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   text-decoration: none;
   padding: 0 1rem;
@@ -84,6 +85,14 @@ export const NavLinks = styled(LinkS)
   &.active {
     border-bottom: 3px solid #01bf71;
   }
+`;
+
+export const DropdownIcon = styled.span `
+display: grid;
+align-items: center;
+margin-left: 2px;
+margin-top: 8px;
+font-size: 24px;
 `;
 
 export const NavBtn = styled.nav `

@@ -1,5 +1,6 @@
 import React from "react";
-import Icon1 from "../../images/svg-8.svg";
+import Icon1 from "../../images/svg-13.svg";
+import Icon2 from "../../images/svg-12.svg";
 import {
   CardsContainer,
   CardsBody,
@@ -23,8 +24,28 @@ function Cards() {
             reprehenderit necessitatibus pariatur
           </CardsP>
         </CardsBody>
+
+        <CardsBody>
+          <CardsIcon src={Icon2} />
+          <CardsH2> Free Lessons</CardsH2>
+          <CardsP>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab
+            reprehenderit necessitatibus pariatur
+          </CardsP>
+        </CardsBody>
+
+         <CardsBody>
+          <CardsIcon src={Icon2} />
+          <CardsH2> Free Lessons</CardsH2>
+          <CardsP>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab
+            reprehenderit necessitatibus pariatur
+          </CardsP>
+        </CardsBody>
       </CardsWrapper>
     </CardsContainer>
+
+    
   );
 }
 

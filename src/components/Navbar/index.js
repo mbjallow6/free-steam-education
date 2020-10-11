@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import Dropdown from '../Dropdown'
 import { IconContext } from "react-icons/lib";
 import { animateScroll as scroll } from "react-scroll";
-import { FaBars } from "react-icons/fa";
+import { FaBars,} from "react-icons/fa";
+import { MdKeyboardArrowDown } from "react-icons/md";
 import {
   Nav,
   NavbarContainer,
@@ -12,10 +14,12 @@ import {
   NavLinks,
   NavBtn,
   NavBtnLink,
+  DropdownIcon
 } from "./NavbarElements";
 
 const Navbar = ({ toggle }) => {
   const [scrollNav, setScrollNav] = useState(false);
+  const [dropdown , setDropdown] = useState(false);
 
   const changeScrollNav = () => {
     if (window.scrollY >= 80) {
@@ -32,6 +36,23 @@ const Navbar = ({ toggle }) => {
   const toggleHome = () => {
     scroll.scrollToTop();
   };
+
+  const onMouseEnter = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(true);
+    }
+  };
+
+  const onMouseLeave = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(false);
+    }
+  };
+  
 
   return (
     <>
@@ -54,11 +75,13 @@ const Navbar = ({ toggle }) => {
                   exact="true"
                   offset={-80}
                 >
-                  About
+                  Home
                 </NavLinks>
               </NavItem>
 
-              <NavItem>
+              <NavItem 
+              onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}>
                 <NavLinks
                   to="Courses"
                   smoth={true}
@@ -67,8 +90,13 @@ const Navbar = ({ toggle }) => {
                   exact="true"
                   offset={-80}
                 >
-                  Courses
+                  Courses 
+                  <DropdownIcon>
+                  <MdKeyboardArrowDown/>
+                  </DropdownIcon>
+                  
                 </NavLinks>
+                {dropdown && <Dropdown/>}
               </NavItem>
 
               <NavItem>
